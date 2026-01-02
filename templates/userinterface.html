@@ -1,0 +1,1583 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<style>
+:root {
+    --primary-green: #2d7a2d;
+    --light-green: #4caf50;
+    --bg-gray: #f8f9fa;
+    --text-dark: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+}
+
+/* Footer Main Styles */
+.main-footer {
+    background-color: #1b4332; /* Deep Professional Green */
+    color: #f0f9f1; /* Light Mint Green Text */
+    padding: 60px 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Logo Styling */
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.footer-logo span {
+    color: #b7e4c7; /* Lighter accent for 'KWIK' */
+}
+
+.brand-info p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Columns */
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: #28a745;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #f0f9f1;
+    text-decoration: none;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+    opacity: 1;
+}
+
+/* Newsletter Input */
+.footer-newsletter {
+    display: flex;
+    margin-top: 15px;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 100%;
+}
+
+.footer-newsletter button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-newsletter button:hover {
+    background-color: #218838;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.footer-bottom a {
+    color: #f0f9f1;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.agrikwik-statements {
+    background-color: #f0f9f1; /* Light Green Background */
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #e0eee1;
+}
+
+.statements-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 5px solid #28a745; /* Brand Green Accent */
+}
+
+.quote-icon {
+    font-size: 80px;
+    color: #28a745;
+    font-family: serif;
+    line-height: 1;
+    margin-bottom: -20px;
+    opacity: 0.3;
+}
+
+.statement-item {
+    display: none;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.statement-item.active {
+    display: block;
+}
+
+.statement-item p {
+    font-size: 1.4rem;
+    color: #2d3436;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.statement-item strong {
+    color: #28a745;
+}
+
+.statement-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Dots */
+.statement-dots {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.s-dot {
+    width: 10px;
+    height: 10px;
+    background: #c8e6c9;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.s-dot.active {
+    background: #28a745;
+    width: 25px; /* Pill shape for active dot */
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container styling */
+.hero-slider-container {
+    position: relative;
+    width: 100%;
+    height: 85vh; /* Adjust height as needed */
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* The slides are stacked on top of each other */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* The active slide is visible */
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Image styling with a dark overlay for text readability */
+.hero-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Dark overlay to make text pop */
+.hero-slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% darkness */
+    z-index: -1;
+}
+
+/* Content Styling */
+.hero-content {
+    color: white;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.4s; /* Slight delay for text animation */
+}
+
+/* Animate text upwards when slide is active */
+.hero-slide.active .hero-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Button Styling */
+.btn-shop {
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745; /* Green for farming vibe */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-shop:hover {
+    background-color: #218838;
+}
+
+/* Navigation Buttons (Arrows) */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* Dots at the bottom */
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2rem; }
+    .hero-content p { font-size: 1.1rem; }
+    .slider-btn { display: none; } /* Hide arrows on mobile, keep dots */
+}
+
+
+.container { padding: 20px; }
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(5, 124, 59, 0.3), rgba(28, 117, 5, 0.3)), url('images/logo.png');
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.hero-content h1 { font-size: 24px; margin-bottom: 5px; }
+
+.btn-shop {
+    background: white;
+    color: var(--primary-green);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Quick Nav */
+.quick-nav {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 15px 5px;
+    margin: -20px 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nav-item { text-align: center; font-size: 11px; font-weight: 600; }
+.icon-circle { color: var(--primary-green); font-size: 20px; margin-bottom: 5px; }
+
+/* Category Cards */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cat-card {
+    background: linear-gradient(to bottom, #7db37d, #2d7a2d);
+    border-radius: 12px;
+    padding: 15px 5px;
+    text-align: center;
+    color: white;
+}
+
+.cat-img-box {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-small {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid white;
+    color: white;
+    border-radius: 15px;
+    font-size: 10px;
+    padding: 4px 10px;
+}
+
+/* Brands */
+.brands-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.brand-box {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    min-width: 80px;
+    text-align: center;
+    border: 1px solid #eee;
+    font-weight: bold;
+    box-shadow: 10px 10px 0px #4caf50; /* Decorative green offset shadow */
+}
+
+/* Product Cards */
+.deals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #4caf50;
+    color: white;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.p-details { padding: 10px; }
+.price { color: var(--primary-green); font-weight: bold; }
+.old-price { text-decoration: line-through; font-size: 10px; color: #999; margin-left: 5px; }
+
+.btn-action {
+    width: 100%;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Deals Section Fixes */
+.subtitle {
+    font-size: 12px;
+    color: #666;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns as per image */
+    gap: 12px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.badge-sale {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #4caf50;
+    color: white;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.product-img-container {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.product-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-name { margin: 5px 0; font-size: 14px; }
+
+.location {
+    font-size: 10px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.price-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.current-price {
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #bbb;
+    font-size: 11px;
+}
+
+.btn-action {
+    background: #2d7a2d;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 6px 0;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* Services Section (Bottom) */
+.services-section {
+    background-color: #f1f5f1; /* Light greenish-grey background */
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+.services-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scrollbar-width: none; /* Hide scrollbar for clean look */
+}
+
+.service-card {
+    min-width: 100px;
+    background: white;
+    padding: 15px 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.service-icon-box {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.service-icon-box img { max-height: 100%; }
+
+.service-card p {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.btn-rent {
+    background: #2d7a2d;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+/* Specific "Rent Now" green buttons from image */
+.rent-green {
+    background-color: #4caf50;
+}
+
+.main-header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo img { height: 35px; }
+
+.brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d7a2d; /* Matching your agricultural green */
+    letter-spacing: -0.5px;
+}
+
+/* Search Bar */
+.search-container {
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    margin: 0 20px;
+}
+
+.search-container i {
+    color: #999;
+    margin-right: 10px;
+}
+
+.search-container input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a.active {
+    color: #4caf50;
+    border-bottom: 3px solid #4caf50;
+    padding-bottom: 5px;
+}
+
+/* Header Icons */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-icons i {
+    font-size: 22px;
+    color: #4caf50;
+    cursor: pointer;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d32f2f; /* Red badge */
+    color: white;
+    font-size: 10px;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-weight: bold;
+}
+
+.user-icon i {
+    color: #777; /* User icon is typically grey/dark */
+}
+
+/* --- Desktop Styles (Keep existing, add these overrides) --- */
+
+.menu-toggle, .hamburger {
+    display: none; /* Hide by default on desktop */
+}
+
+/* --- Mobile Responsive Logic --- */
+
+@media (max-width: 992px) {
+    .search-container {
+        width: 25%; /* Shrink search bar on tablets */
+    }
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 5px 0;
+    }
+
+    /* Hide Desktop Search & Nav */
+    .search-container {
+        display: none; /* Usually moved to a second row or inside menu on mobile */
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        order: 3;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #2d7a2d;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    /* Mobile Menu Overlay */
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: -100%; /* Hidden off-screen */
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .nav-links a.active {
+        border-bottom: none;
+        color: #2d7a2d;
+    }
+
+    /* Toggle logic: When checkbox is checked, show menu */
+    .menu-toggle:checked ~ .nav-links {
+        left: 0;
+    }
+
+    /* Animate Hamburger to 'X' */
+    .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -7px);
+    }
+
+    .header-icons {
+        order: 2;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .brand-name {
+        font-size: 20px;
+    }
+}
+
+/* About Us Styling */
+.about-section {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2d7a2d;
+    font-weight: 600;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px #4caf50; /* Decorative green offset shadow */
+}
+
+/* Contact Us Styling */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.info-item i {
+    font-size: 20px;
+    color: #4caf50;
+    margin-top: 5px;
+}
+
+.info-item h4 { margin: 0; font-size: 16px; }
+.info-item p { margin: 5px 0 0; color: #666; font-size: 14px; }
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #4caf50;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        order: -1; /* Image appears first on mobile */
+    }
+}
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriKwik | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="{{ url_for('static', filename='images/IMG-20251222-WA0002.jpg') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <nav class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="agrikwik">
+            <span class="brand-name">AgriKwik</span>
+        </div>
+
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Products">
+        </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+
+        <div class="header-icons">
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-badge">0</span>
+            </div>
+            <div class="user-icon">
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </div>
+    </div>
+</nav>
+    <header class="hero-slider-container">
+    <div class="hero-track">
+        
+        <div class="hero-slide active">
+            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=2070&auto=format&fit=crop" alt="Seeds and Garden">
+            <div class="hero-content">
+                <h1>PREMIUM SEEDS FOR A HARVEST OF TOMORROW</h1>
+                <p>Vegetables, Grains, Flowers & More</p>
+                <button class="btn-shop">SHOP NOW</button>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop" alt="Vegetables">
+            <div class="hero-content">
+                <h1>ORGANIC VEGETABLES</h1>
+                <p>Taste the difference of nature</p>
+                <button class="btn-shop">VIEW VEGGIES</button>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1492496913980-501307bdf0dc?q=80&w=1974&auto=format&fit=crop" alt="Grains">
+            <div class="hero-content">
+                <h1>GOLDEN GRAINS</h1>
+                <p>Wheat, Corn, and Barley varieties</p>
+                <button class="btn-shop">SHOP GRAINS</button>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1460039230329-eb070fc6c77c?q=80&w=1935&auto=format&fit=crop" alt="Sunflowers">
+            <div class="hero-content">
+                <h1>BLOOMING FLOWERS</h1>
+                <p>Bring color to your garden</p>
+                <button class="btn-shop">SHOP FLOWERS</button>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1591955506264-3f5a6834570a?q=80&w=2070&auto=format&fit=crop" alt="Farming Tools">
+            <div class="hero-content">
+                <h1>ESSENTIAL TOOLS</h1>
+                <p>Everything you need to sow success</p>
+                <button class="btn-shop">BROWSE TOOLS</button>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1615811361269-661582236544?q=80&w=2070&auto=format&fit=crop" alt="Harvest">
+            <div class="hero-content">
+                <h1>READY FOR HARVEST</h1>
+                <p>Yield boosting premium seed packs</p>
+                <button class="btn-shop">GET STARTED</button>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="slider-btn prev-btn">&#10094;</button>
+    <button class="slider-btn next-btn">&#10095;</button>
+
+    <div class="slider-dots"></div>
+</header>
+<br><br>
+    <section class="quick-nav">
+        <div class="nav-item">
+            <div class="icon-circle"><i class="fa-solid fa-store"></i></div>
+            <span>Official Stores</span>
+        </div>
+        <div class="nav-item">
+            <div class="icon-circle"><i class="fa-solid fa-house-chimney"></i></div>
+            <span>Agro-Dealers</span>
+        </div>
+        <div class="nav-item">
+            <div class="icon-circle"><i class="fa-solid fa-shop"></i></div>
+            <span>Farmer's Market</span>
+        </div>
+        <div class="nav-item">
+            <div class="icon-circle"><i class="fa-solid fa-handshake"></i></div>
+            <span>Rent & Share</span>
+        </div>
+        <div class="nav-item">
+            <div class="icon-circle"><i class="fa-solid fa-headset"></i></div>
+            <span>Services</span>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid">
+            <div class="cat-card">
+                <div class="product-img-container">
+                    <img src="{{ url_for('static', filename='images/seeds.jpg') }}" alt="Groundnuts">
+                </div>
+                <h3>Seeds</h3>
+                <button class="btn-small">Shop Now</button>
+            </div>
+            <div class="cat-card">
+                <div class="product-img-container">
+                    <img src="{{ url_for('static', filename='images/fertilizer.jpg') }}" alt="Groundnuts">
+                </div>
+                <h3>Fertilizer</h3>
+                <button class="btn-small">Shop Now</button>
+            </div>
+            <div class="cat-card">
+                <div class="product-img-container">
+                    <img src="{{ url_for('static', filename='images/pipes.jpg') }}" alt="Groundnuts">
+                </div>
+                <h3>Farm Equipments</h3>
+                <button class="btn-small">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section-header">
+            <h2 class="section-title">Popular Brands</h2>
+        </div>
+        <div class="brands-row">
+            <div class="brand-box">Gala Macs</div>
+            <div class="brand-box">ADMARC</div>
+            <div class="brand-box">ExAgri Africa</div>
+            <div class="brand-box">Tropha Estates</div>
+            <div class="brand-box">PyXus</div>
+            <div class="brand-box">Pannar Seed</div>
+            <div class="brand-box">Funwe Farm</div>
+            <div class="brand-box">TAMA</div>
+            <div class="brand-box">OPTICHEM</div>
+            <div class="brand-box">NASFARM</div>
+        </div>
+    </section>
+        <section class="container">
+        <h2 class="section-title">Today's Deals</h2>
+        <p class="subtitle">Don't miss our limited-time offers.</p>
+        
+        <div class="deals-grid">
+            <div class="product-card">
+                <span class="badge-sale">● SALE</span>
+                <div class="product-img-container">
+                    <img src="{{ url_for('static', filename='images/seeds.jpg') }}" alt="Maize">
+                </div>
+                <div class="p-details">
+                    <h4 class="product-name">Maize</h4>
+                    <p class="location"><i class="fa-solid fa-location-dot"></i> Kasungu</p>
+                    <div class="price-row">
+                        <span class="current-price">MK23,500</span>
+                        <span class="old-price">MK24,500</span>
+                    </div>
+                    <button class="btn-action">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="badge-sale">● SALE</span>
+                <div class="product-img-container">
+                    <img src="{{ url_for('static', filename='images/beans.jpg') }}" alt="Beans">
+                </div>
+                <div class="p-details">
+                    <h4 class="product-name">Beans</h4>
+                    <p class="location"><i class="fa-solid fa-location-dot"></i> Lilongwe</p>
+                    <div class="price-row">
+                        <span class="current-price">MK1,650</span>
+                        <span class="old-price">MK2,500</span>
+                    </div>
+                    <button class="btn-action">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="badge-sale">● SALE</span>
+                <div class="product-img-container">
+                    <img src="{{ url_for('static', filename='images/groundnut.jpg') }}" alt="Groundnuts">
+                </div>
+                <div class="p-details">
+                    <h4 class="product-name">Groundnuts</h4>
+                    <p class="location"><i class="fa-solid fa-location-dot"></i> Mangochi</p>
+                    <div class="price-row">
+                        <span class="current-price">MK8,500</span>
+                        <span class="old-price">MK6,500</span>
+                    </div>
+                    <button class="btn-action">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid services-section">
+        <div class="container">
+            <h2 class="section-title">Fresh from Farmers Near You</h2>
+            <p class="subtitle">Support Local Farmers in Your Area</p>
+            
+            <div class="services-scroll">
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/tractor.jpg') }}" alt="Tractor"></div>
+                    <p>Tractor Rental</p>
+                    <button class="btn-rent">Shop Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/sprayer.jpg') }}" alt="Sprayers"></div>
+                    <p>Sprayers</p>
+                    <button class="btn-rent">Shop Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/Sheller.jpg') }}" alt="Shellers"></div>
+                    <p>Shellers</p>
+                    <button class="btn-rent">Rent Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/truck.jpg') }}" alt="Transport"></div>
+                    <p>Transport</p>
+                    <button class="btn-rent rent-green">Book Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img  src="{{ url_for('static', filename='images/services.jpg') }}" alt="Services"></div>
+                    <p>Services</p>
+                    <button class="btn-rent rent-green">Contact Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/drip.jpg') }}" alt="Sprayers"></div>
+                    <p>Drip System</p>
+                    <button class="btn-rent">Shop Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/pipes.jpg') }}" alt="Shellers"></div>
+                    <p>Irrigation Pipes</p>
+                    <button class="btn-rent">Shop Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/fertilizer.jpg') }}" alt="Transport"></div>
+                    <p>Fertilizer</p>
+                    <button class="btn-rent rent-green">Shop Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img  src="{{ url_for('static', filename='images/famers.jpg') }}" alt="Services"></div>
+                    <p>Cooperatives</p>
+                    <button class="btn-rent rent-green">Join Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/Nozzle.jpg') }}" alt="Sprayers"></div>
+                    <p>Equipments</p>
+                    <button class="btn-rent">Shop Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/seeder.jpg') }}" alt="Shellers"></div>
+                    <p>Seeder</p>
+                    <button class="btn-rent">Rent Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/seeds.jpg') }}" alt="Transport"></div>
+                    <p>Seeds</p>
+                    <button class="btn-rent rent-green">Shop Now</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-box"><img  src="{{ url_for('static', filename='images/Sprinkler.jpg') }}" alt="Services"></div>
+                    <p>Equipment</p>
+                    <button class="btn-rent rent-green">Rent Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container about-section" id="about">
+    <div class="about-grid">
+        <div class="about-content">
+            <h2 class="section-title">About Us</h2>
+
+            <p><strong>Agrikwik</strong> is a technology-driven agricluture platform transforming the way farmers, agro-dealers, and consumers interect across Malawi and eventually the wider Sourthen African region. We provide a unified ecosystem that connects verified farmers, input suppliers
+            , service providers, and buyers, enabling seamless trade, efficient logistics, and access to essential agricultural services. By digitizing and streamlinign agricultural operations, AgriKwik empowers smallholder farmers to increase productivity, ensures consumersget quality produce, and creates scalable business opportunities for partners.
+        <br> Through our innovative solutions, including the Farmers Market, Official Stores, Agro-Dealers, Rent & Share, and a suite of Services, we are building the operating system for agricluture(Agri-OS).
+    <br><br><strong>Mission</strong><br>
+<br>To empower farmers, connect agriculturalstakeholders, and drive sustainable growth in African agricluture through technology, innovation, and inclusive digital solutions.
+<br><br><strong>Vission</strong><br><br>
+To become the leading agricultural operating system in Africa, creating a digitally connected ecosystem where farmers, buyers, and service providers thrive, and agricluture drives prosperity for all. </p>
+            <ul class="about-list">
+                <li><i class="fa-solid fa-check-circle"></i> High-quality certified seeds</li>
+                <li><i class="fa-solid fa-check-circle"></i> Reliable equipment rentals</li>
+                <li><i class="fa-solid fa-check-circle"></i> Direct support for local communities</li>
+            </ul>
+        </div>
+        <div class="about-image">
+            <img src="{{ url_for('static', filename='images/sprayingtractor.jpg') }}" alt="Our Farm Vision">
+        </div>
+    </div>
+</section>
+
+<section class="agrikwik-statements">
+    <div class="statements-container">
+        <div class="quote-icon">“</div>
+        
+        <div class="statement-track">
+            <div class="statement-item active">
+                <p>At <strong>Agrikwik</strong>, we believe the future of farming lies at the intersection of soil and silicon, bringing smart data to every seed sown.</p>
+                <span class="statement-tag">Innovation</span>
+            </div>
+
+            <div class="statement-item">
+                <p>Precision agriculture isn't just a luxury; it’s the <strong>Agrikwik</strong> standard for ensuring global food security through technology.</p>
+                <span class="statement-tag">Global Impact</span>
+            </div>
+
+            <div class="statement-item">
+                <p>We are transforming traditional landscapes into digital ecosystems, empowering farmers with real-time insights and Agrikwik efficiency.</p>
+                <span class="statement-tag">Digital Transformation</span>
+            </div>
+
+            <div class="statement-item">
+                <p>Innovation at <strong>Agrikwik</strong> means less waste and more growth, utilizing automated systems to protect our planet’s most vital resources.</p>
+                <span class="statement-tag">Sustainability</span>
+            </div>
+
+            <div class="statement-item">
+                <p>The next green revolution won't be fought with tools alone, but with the intelligent algorithms and pioneering spirit of the <strong>Agrikwik</strong> community.</p>
+                <span class="statement-tag">The Future</span>
+            </div>
+        </div>
+
+        <div class="statement-dots"></div>
+    </div>
+</section>
+
+<section class="container contact-section" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="subtitle">Have questions? We're here to help you grow.</p>
+    
+    <div class="contact-grid">
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <h4>Location</h4>
+                    <p>Area 4, Lilongwe, Malawi</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+265 888 444 222</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>info@agriKwik.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <form class="contact-form" id="agrikwik-contact">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="How can we help you?" rows="5" required></textarea>
+            <button type="submit" class="btn-action">Send Message</button>
+            <p id="formStatus" style="display:none; color: #28a745; margin-top: 10px;">
+                Opening your email application...
+            </p>
+        </form>
+    
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-info">
+            <h2 class="footer-logo">AGRI<span>KWIK</span></h2>
+            <p>Empowering farmers through precision technology and premium seed quality. Innovation at the speed of nature.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop Seeds</a></li>
+                <li><a href="#">Agri-Tech Solutions</a></li>
+                <li><a href="#">Our Vision</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Get In Touch</h3>
+            <p><i class="fas fa-map-marker-alt"></i>  Area 4, Lilongwe, Malawi</p>
+            <p><i class="fas fa-phone"></i> +265 888 444 222</p>
+            <p><i class="fas fa-envelope"></i> info@agrikwik.com</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Stay Updated</h3>
+            <p>Join our mailing list for the latest in agricultural innovation.</p>
+            <form class="footer-newsletter">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit">JOIN</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Agrikwik. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</footer>
+
+    <script src="script.js">
+    document.querySelectorAll('.btn-shop, .btn-action, .btn-small').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Redirecting to the shop...');
+    });
+});
+
+
+const brandRow = document.querySelector('.brands-row');
+
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.hero-slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const dotsContainer = document.querySelector('.slider-dots');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function goToSlide(n) {
+
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetTimer();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetTimer();
+        });
+
+        function startTimer() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
+
+        startTimer();
+    });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const items = document.querySelectorAll('.statement-item');
+        const dotsContainer = document.querySelector('.statement-dots');
+        let currentIdx = 0;
+
+        items.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('s-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => showStatement(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.s-dot');
+
+        function showStatement(index) {
+            items[currentIdx].classList.remove('active');
+            dots[currentIdx].classList.remove('active');
+            
+            currentIdx = index;
+            
+            items[currentIdx].classList.add('active');
+            dots[currentIdx].classList.add('active');
+        }
+
+        setInterval(() => {
+            let next = (currentIdx + 1) % items.length;
+            showStatement(next);
+        }, 6000);
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('agrikwik-contact');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const msg = document.getElementById('message').value.trim();
+
+        if (!name || !email || !msg) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        const recipient = "info@agrikwik.com";
+        const subject = encodeURIComponent(`Agrikwik Inquiry from ${name}`);
+        const body = encodeURIComponent(
+            `Name: ${name}\n` +
+            `Email: ${email}\n\n` +
+            `Message:\n${msg}`
+        );
+
+        const mailto = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+        const status = document.getElementById('formStatus');
+        status.style.display = 'block';
+
+        window.location.href = mailto;
+
+        setTimeout(() => {
+            form.reset();
+            status.style.display = 'none';
+        }, 3000);
+    });
+});
+</script>
+
+</body>
+</html>
