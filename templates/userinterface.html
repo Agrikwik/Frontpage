@@ -1023,11 +1023,10 @@ body {
         </div>
     </div>
 </nav>
+
     <header class="hero-slider-container">
-    <div class="hero-track">
-        
         <div class="hero-slide active">
-            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=2070&auto=format&fit=crop" alt="Seeds and Garden">
+            <img src="{{ url_for('static', filename='images/beans.jpg')}}" alt="Seeds and Garden">
             <div class="hero-content">
                 <h1>PREMIUM SEEDS FOR A HARVEST OF TOMORROW</h1>
                 <p>Vegetables, Grains, Flowers & More</p>
@@ -1036,47 +1035,47 @@ body {
         </div>
 
         <div class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop" alt="Vegetables">
+            <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?q=80&w=2070&auto=format&fit=crop" alt="Future Agriculture">
             <div class="hero-content">
-                <h1>ORGANIC VEGETABLES</h1>
-                <p>Taste the difference of nature</p>
-                <button class="btn-shop">VIEW VEGGIES</button>
+                <h1>THE FUTURE IS AGRIKWIK</h1>
+                <p>Empowering the next generation of digital farmers.</p>
+                <button class="btn-shop">JOIN US</button>
             </div>
         </div>
 
         <div class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1492496913980-501307bdf0dc?q=80&w=1974&auto=format&fit=crop" alt="Grains">
+            <img src="{{ url_for('static', filename='images/sprayingtractor.jpg')}}" alt="Sustainable Growth">
             <div class="hero-content">
-                <h1>GOLDEN GRAINS</h1>
-                <p>Wheat, Corn, and Barley varieties</p>
-                <button class="btn-shop">SHOP GRAINS</button>
+                <h1>SUSTAINABLE GROWTH</h1>
+                <p>Advanced technology protecting tomorrow's land.</p>
+                <button class="btn-shop">GO GREEN</button>
             </div>
         </div>
 
         <div class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1460039230329-eb070fc6c77c?q=80&w=1935&auto=format&fit=crop" alt="Sunflowers">
+            <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?q=80&w=2070&auto=format&fit=crop" alt="Data Driven Farming">
             <div class="hero-content">
-                <h1>BLOOMING FLOWERS</h1>
-                <p>Bring color to your garden</p>
-                <button class="btn-shop">SHOP FLOWERS</button>
+                <h1>DATA-DRIVEN HARVESTS</h1>
+                <p>Agrikwik analytics transform how you see your soil.</p>
+                <button class="btn-shop">SEE THE DATA</button>
             </div>
         </div>
 
         <div class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1591955506264-3f5a6834570a?q=80&w=2070&auto=format&fit=crop" alt="Farming Tools">
+            <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=2072&auto=format&fit=crop" alt="Agricultural Drone">
             <div class="hero-content">
-                <h1>ESSENTIAL TOOLS</h1>
-                <p>Everything you need to sow success</p>
-                <button class="btn-shop">BROWSE TOOLS</button>
+                <h1>INNOVATION IN EVERY ACRE</h1>
+                <p>Precision tools for maximum yield and minimum waste.</p>
+                <button class="btn-shop">VIEW SOLUTIONS</button>
             </div>
         </div>
 
         <div class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1615811361269-661582236544?q=80&w=2070&auto=format&fit=crop" alt="Harvest">
+            <img src="{{ url_for('static', filename='images/drip.jpg')}}" alt="Smart Farming Technology">
             <div class="hero-content">
-                <h1>READY FOR HARVEST</h1>
-                <p>Yield boosting premium seed packs</p>
-                <button class="btn-shop">GET STARTED</button>
+                <h1>SMART FARMING WITH AGRIKWIK</h1>
+                <p>Bridging the gap between tradition and technology.</p>
+                <button class="btn-shop">DISCOVER MORE</button>
             </div>
         </div>
 
@@ -1227,8 +1226,8 @@ body {
                     <button class="btn-rent">Shop Now</button>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/Sheller.jpg') }}" alt="Shellers"></div>
-                    <p>Shellers</p>
+                    <div class="service-icon-box"><img src="{{ url_for('static', filename='images/seeder.jpg') }}" alt="Shellers"></div>
+                    <p>Seeders</p>
                     <button class="btn-rent">Rent Now</button>
                 </div>
                 <div class="service-card">
