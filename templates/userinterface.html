@@ -774,13 +774,12 @@ body {
 }
 
 .user-icon i {
-    color: #777; /* User icon is typically grey/dark */
+    color: #777;
 }
 
-/* --- Desktop Styles (Keep existing, add these overrides) --- */
 
 .menu-toggle, .hamburger {
-    display: none; /* Hide by default on desktop */
+    display: none;
 }
 
 /* --- Mobile Responsive Logic --- */
@@ -1118,21 +1117,108 @@ body {
                     <img src="{{ url_for('static', filename='images/seeds.jpg') }}" alt="Groundnuts">
                 </div>
                 <h3>Seeds</h3>
-                <button class="btn-small">Shop Now</button>
+                <button id="kwikpesa-btn" class="btn-small">Buy Now</button>
+
+<div id="payment-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8);">
+    <div style="width:90%; max-width:400px; margin:10% auto; background:white; position:relative;">
+        <button onclick="closeModal()" style="position:absolute; right:10px;">X</button>
+        <iframe id="payment-frame" src="" width="100%" height="450px" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script>
+    function openKwikPesa(linkUrl) {
+        document.getElementById('payment-frame').src = linkUrl;
+        document.getElementById('payment-modal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('payment-modal').style.display = 'none';
+    }
+
+    // Listen for the "success" message from your Render app
+    window.addEventListener("message", (event) => {
+        if (event.data === "payment_initiated") {
+            console.log("Payment flow started!");
+            // You can hide the modal or show a 'Thank You' message here
+        }
+    }, false);
+    
+    // Example: Triggering it
+    document.getElementById('kwikpesa-btn').onclick = () => openKwikPesa("https://your-app.onrender.com/pay/SPh_qhM3");
+</script>
             </div>
             <div class="cat-card">
                 <div class="product-img-container">
                     <img src="{{ url_for('static', filename='images/fertilizer.jpg') }}" alt="Groundnuts">
                 </div>
                 <h3>Fertilizer</h3>
-                <button class="btn-small">Shop Now</button>
+                <button id="kwikpesa-btn" class="btn-small">Buy Now</button>
+
+<div id="payment-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8);">
+    <div style="width:90%; max-width:400px; margin:10% auto; background:white; position:relative;">
+        <button onclick="closeModal()" style="position:absolute; right:10px;">X</button>
+        <iframe id="payment-frame" src="" width="100%" height="450px" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script>
+    function openKwikPesa(linkUrl) {
+        document.getElementById('payment-frame').src = linkUrl;
+        document.getElementById('payment-modal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('payment-modal').style.display = 'none';
+    }
+
+    // Listen for the "success" message from your Render app
+    window.addEventListener("message", (event) => {
+        if (event.data === "payment_initiated") {
+            console.log("Payment flow started!");
+            // You can hide the modal or show a 'Thank You' message here
+        }
+    }, false);
+    
+    // Example: Triggering it
+    document.getElementById('kwikpesa-btn').onclick = () => openKwikPesa("https://your-app.onrender.com/pay/SPh_qhM3");
+</script>
             </div>
             <div class="cat-card">
                 <div class="product-img-container">
                     <img src="{{ url_for('static', filename='images/pipes.jpg') }}" alt="Groundnuts">
                 </div>
                 <h3>Farm Equipments</h3>
-                <button class="btn-small">Shop Now</button>
+                <button id="kwikpesa-btn" class="btn-small">Buy Now</button>
+
+<div id="payment-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8);">
+    <div style="width:90%; max-width:400px; margin:10% auto; background:white; position:relative;">
+        <button onclick="closeModal()" style="position:absolute; right:10px;">X</button>
+        <iframe id="payment-frame" src="" width="100%" height="450px" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script>
+    function openKwikPesa(linkUrl) {
+        document.getElementById('payment-frame').src = linkUrl;
+        document.getElementById('payment-modal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('payment-modal').style.display = 'none';
+    }
+
+    // Listen for the "success" message from your Render app
+    window.addEventListener("message", (event) => {
+        if (event.data === "payment_initiated") {
+            console.log("Payment flow started!");
+            // You can hide the modal or show a 'Thank You' message here
+        }
+    }, false);
+    
+    // Example: Triggering it
+    document.getElementById('kwikpesa-btn').onclick = () => openKwikPesa("https://your-app.onrender.com/pay/SPh_qhM3");
+</script>
             </div>
         </div>
     </section>
